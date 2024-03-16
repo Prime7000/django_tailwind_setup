@@ -1,11 +1,33 @@
+{% load static tailwind_tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% tailwind_css %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    <h1>{{ name }}</h1>
+<body class="bg-white">
+    <h1 class="font-bold text-center text-3xl p-3 m-3"> AOT DJANGO EMAIL</h1>
+
+    <div class="bg-gray-200 p-3 m-3" style="display: flex; justify-content: center; align-items: center;">
+        <div style="width: 100%;">
+            <form method="POST" action=".">
+                {% csrf_token %}
+                <label for="email" class="font-bold"> Email Title  </label> <br>
+                <input placeholder="Input email title" class="rounded-lg hover:border-green-600 hover:border-4"   style="width: 50%;" type="text" name="title" id="email"> <br>
+
+
+                <label for="email" class="font-bold"> Your Email  </label> <br>
+                <input placeholder="Input email " class="rounded-lg hover:border-green-600 hover:border-4"   style="width: 50%;" type="text" name="email" id="email"> <br>
+
+                <label for="message" class="font-bold"> Your Messages  </label> <br>
+                <textarea placeholder="Input Message" class="rounded hover:border-green-600 hover:border-4" style="width: 50%; " name="message" id="" cols="30" rows="10"></textarea> <br>
+                <button type="submit" class="text-center bg-green-600 p-3 m-3 rounded-lg hover:bg-green-300">Send message</button>
+
+            </form>
+        </div>
+    </div>
+    </div>
 </body>
 </html>

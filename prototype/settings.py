@@ -26,6 +26,7 @@ SECRET_KEY = 'django-insecure-*f)pejbw$4f-2yah9box#88&gadg!gql)=810#+4b##(oubxlo
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
 ALLOWED_HOSTS = ['localhost']
 
 
@@ -38,8 +39,19 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'core'
+    'core',
+    'tailwind',
+    'theme',
+    'django_browser_reload',
 ]
+
+TAILWIND_APP_NAME = 'theme'
+
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
+
+NPM_BIN_PATH = "c:/Program Files/nodejs/npm.cmd"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -49,6 +61,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "django_browser_reload.middleware.BrowserReloadMiddleware",
+
 ]
 
 ROOT_URLCONF = 'prototype.urls'
@@ -128,3 +142,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'agbadutaofejiro123@gmail.com'
+EMAIL_HOST_PASSWORD = 'tuuejujnafwgzvkf'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
